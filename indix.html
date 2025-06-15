@@ -5,11 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
 
+<body>
+    <div id="main" class="p-5 w-full h-[100vh] flex flex-col justify-between">
+        <div class="">
+            <h1 class="text-6xl font-bold">To Do </h1>
+            <h3 class="text-lg  font-medium pl-2">Stay on Track, Every Day <span class="text-xl">👍</span></h3>
+        </div>
+
+        <!-- filtter -->
+        <div class="flex gap-4 px-2  text-sm font-semibold ">
+            <div class=" px-6 bg-zinc-300 text-black rounded-[100px] py-1 ">All</div>
+            <div class=" px-6 bg-zinc-300 text-black rounded-[100px] py-1 ">Active</div>
+            <div class=" px-6 bg-zinc-300 text-black rounded-[100px] py-1 ">Completed</div>
+        </div>
+        <!-- display all todos -->
+        <div class=" h-[62vh] py-2">
+            <ul>
+                <li class="rounded-xl text-md font-semibold flex items-center gap-2 bg-zinc-100 py-2 px-3">
+                    <div class="r w-5 h-5 border-2 rounded-full ">
+                    </div>
+                    <div class="bg-red-200 w-[80%] flex-wrap leading-5">
+                        Task retuen this time
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="flex justify-between items-center">
+            <div class="font-semibold text-sm flex gap-2 ">
+                <span class="">4 items left</span>
+                &#x2022;
+                <span class="">10 Active</span>
+                &#x2022;
+                <span class="">1 Completed</span>
+            </div>
+
+
+            <div
+                class="bg-zinc-300 w-12 h-12 rounded-full pb-2 text-black flex items-center justify-center text-4xl font-bold">
+                +
+            </div>
+        </div>
+    </div>
     <script src="./app.js"></script>
 </body>
+
 </html>
