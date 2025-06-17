@@ -7,10 +7,11 @@
     <title>Todo</title>
     <link rel="stylesheet" href="./style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
-<body>
-    <div id="main" class="p-5 w-full h-[100vh] flex flex-col justify-between">
+<body class="relative">
+    <div id="main" class="p-5 w-full h-[100vh] flex flex-col gap-4">
         <div class="">
             <h1 class="text-6xl font-bold">To Do </h1>
             <h3 class="text-lg  font-medium pl-2">Stay on Track, Every Day <span class="text-xl">👍</span></h3>
@@ -23,14 +24,16 @@
             <div class=" px-6 bg-zinc-300 text-black rounded-[100px] py-1 ">Completed</div>
         </div>
         <!-- display all todos -->
-        <div class=" h-[62vh] py-2">
-            <ul>
-                <li class="rounded-xl text-md font-semibold flex items-center gap-2 bg-zinc-100 py-2 px-3">
-                    <div class="r w-5 h-5 border-2 rounded-full ">
+        <div class=" max-h-[62vh] py-2">
+            <ul class="flex flex-col gap-3 overflow-y-auto h-full">
+                <li class=" rounded-xl text-md font-semibold flex items-center gap-2 bg-zinc-100 py-2 px-3">
+                    <div class="checkbox w-5 h-5 border-2 rounded-full ">
                     </div>
-                    <div class="bg-red-200 w-[80%] flex-wrap leading-5">
-                        Task retuen this time
+                    <div class="task bg-red-200 w-[80%] flex-wrap leading-5">
+                        Task return this time this name and work on this.
                     </div>
+                    <i class="ri-pencil-fill"></i>
+                    <i class="ri-close-line text-xl"></i>
                 </li>
             </ul>
         </div>
@@ -44,10 +47,33 @@
             </div>
 
 
-            <div
-                class="bg-zinc-300 w-12 h-12 rounded-full pb-2 text-black flex items-center justify-center text-4xl font-bold">
-                +
+            <div class="bg-zinc-300 w-12 h-12 rounded-full text-black flex items-center justify-center text-3xl font-bold"
+                onclick="document.querySelector('.overlay').style.display='flex'">
+              <i class="ri-add-line"></i>
             </div>
+        </div>
+    </div>
+
+    <div
+        class="overlay backdrop-blur-xs w-full h-full absolute top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2  flex items-center justify-center">
+
+        <div class="absolute w-8 h-8 top-0 right-0 m-4 text-xl font-bold cursor-pointer text-zinc-500 hover:text-zinc-700 hover:border-zinc-700 transition duration-200 border-2 border-zinc-300 rounded-full flex items-center justify-center"
+            onclick="document.querySelector('.overlay').style.display='none'">
+           <i class="ri-close-line"></i>
+        </div>
+
+
+        <div
+            class="w-[80%] h-[55%] bg-zinc-200 rounded-lg  p-5 flex flex-col justify-center gap-3 shadow-[0px_3px_8px_rgba(0,0,0,0.24)]">
+
+            <h2 class="text-3xl font-bold mb-4">Add New Task</h2>
+            <textarea placeholder="Enter your task here"
+                class="w-full p-3 border-2 border-zinc-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-zinc-500 font-semibold "
+                maxlength="50" rows="5"></textarea>
+            <button
+                class="bg-zinc-500 text-white px-6 py-2 rounded-lg hover:bg-zinc-600 transition duration-200 font-semibold">Add
+                Task</button>
+
         </div>
     </div>
     <script src="./app.js"></script>
