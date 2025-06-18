@@ -14,28 +14,30 @@
     <div id="main" class="p-5 w-full h-[100vh] flex flex-col gap-4">
         <div class="">
             <h1 class="text-6xl font-bold">To Do </h1>
-            <h3 class="text-lg  font-medium pl-2">Stay on Track, Every Day <span class="text-xl">👍</span></h3>
+           
+                <h3 class="text-lg  font-medium pl-2">Stay on Track, Every Day <span class="text-xl">👍</span></h3>
+             
+            
         </div>
 
-        <!-- filtter -->
-        <div class="flex gap-4 px-2  text-sm font-semibold ">
-            <div class=" px-6 bg-zinc-300 text-black rounded-[100px] py-1 ">All</div>
-            <div class=" px-6 bg-zinc-300 text-black rounded-[100px] py-1 ">Active</div>
-            <div class=" px-6 bg-zinc-300 text-black rounded-[100px] py-1 ">Completed</div>
+        <div class="flex justify-between items-center">
+            <div class="flex gap-4 px-2  text-sm font-semibold ">
+                <div class=" px-6  rounded-[100px] py-1 cursor-pointer filter-btn">All</div>
+                <div class=" px-6  rounded-[100px] py-1 cursor-pointer filter-btn">Active</div>
+                <div class=" px-6  rounded-[100px] py-1 cursor-pointer filter-btn">Completed</div>
+            </div>
+               <i class="text-lg text-red-500 ri-delete-bin-7-line cursor-pointer font-semibold" id="deleteAll"></i>
         </div>
+        <!-- filtter -->
         <!-- display all todos -->
         <div class=" max-h-[62vh] py-2">
             <ul class="flex flex-col gap-3 overflow-y-auto h-full" id="taskList">
                 
             </ul>
         </div>
-        <div class="flex justify-between items-center">
-            <div class="font-semibold text-sm flex gap-2 ">
-                <span class="">4 items left</span>
-                &#x2022;
-                <span class="">10 Active</span>
-                &#x2022;
-                <span class="">1 Completed</span>
+        <div class="flex justify-between items-center" >
+            <div class="font-semibold text-sm flex gap-2 px-2" id="taskCount">
+             
             </div>
 
 
